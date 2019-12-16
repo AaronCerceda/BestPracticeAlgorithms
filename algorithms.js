@@ -34,7 +34,7 @@ function maxChar(string) {
 }
 
 
-console.log(maxChar("hheeeeeellloooooooooooooo"));
+//console.log(maxChar("hheeeeeellloooooooooooooo"));
 
 /* FIZZBUZZ ALGORITHM */
 
@@ -82,12 +82,14 @@ function chunk(array, size) {
 
         let last = chunked[chunked.length - 1]; //Save the last element in the array
 
+       // console.log(last);
+
         if(!last || last.length === size) {
             chunked.push([element]);
         }
         else {
             last.push(element);
-        }
+        } 
 
     }
 
@@ -112,4 +114,67 @@ function chunk2(array, size) {
  }
 
 
-console.log(chunk2([1,2,3,4,5,6,7], 2));
+ function longestWord2(string) {
+  
+    let newString = string.split(' '); 
+    let longestWord = 0; //Init in 0
+    let position = 0;
+    
+    for(let i = 0; i <= newString.length - 1; i++) {
+          if(newString[i].length > longestWord) {
+              longestWord = newString[i].length;
+              position = i;
+        }
+      
+    }
+    
+    return newString[position];
+    
+  }
+
+  function letterchanges(str) {
+
+    let alph = 'abcdefghijklmnopqrstuvwxyz';
+    var finalWord = '';
+
+    for(let i = 0; i <= str.length - 1; i++) {
+        
+        for(let j = 0; j <= alph.length - 1; j++) {
+            
+            if(str[i] == alph[j]) {
+                finalWord = finalWord + alph[j + 1];
+            }
+
+        }
+
+        if(str[i] == " ") {
+            finalWord+= " ";
+        }
+
+    }
+
+    finalWord = finalWord.replace(/([aeiou])/g, (c) => { //REGEX 
+        return c.toUpperCase();
+    });
+
+    
+  }
+
+
+  function timeConverter(time) {
+
+    let hours = Math.floor(time / 60);
+    let process = (time / 60) % 1 * 60;
+    let minutes = Math.round(process);
+
+    let finalResult = hours + ":" + minutes;
+    console.log(finalResult);
+  }
+
+  timeConverter(121);
+
+  //letterchanges("fun times!");
+ //console.log(longestWord2("5345416416514654146 mundo amigos"));
+
+//console.log(chunk([1,2,3,4,5,6,7], 2));
+
