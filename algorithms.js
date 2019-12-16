@@ -95,6 +95,8 @@ function chunk(array, size) {
 
 }
 
+/* SECOND SOLUTION OF CHUNK ARRAY ALGORITHM, THIS IS FASTER THAN FIRST ONE */
+
 function chunk2(array, size) {
 
     let chunked = [];
@@ -109,8 +111,5 @@ function chunk2(array, size) {
 
  }
 
- function dude() {
-     
- }
 
 console.log(chunk2([1,2,3,4,5,6,7], 2));
