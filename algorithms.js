@@ -109,5 +109,8 @@ function chunk2(array, size) {
 
  }
 
+ function dude() {
+     
+ }
 
 console.log(chunk2([1,2,3,4,5,6,7], 2));
